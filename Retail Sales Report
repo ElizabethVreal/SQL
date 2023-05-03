@@ -1,4 +1,7 @@
+--First I created a Homegoods store database and organized each product by total items sold, total revenue, and gross profit of each product.
+
 CREATE TABLE Homegoods (id INTEGER PRIMARY KEY, item TEXT, total_items_sold INTEGER, total_revenue INTEGER, gross_profit INTEGER);
+
 INSERT INTO Homegoods VALUES (1, "bed_sheets",7, 420,120);
 INSERT INTO Homegoods VALUES ( 2, "bed_skirt",5,100,300);
 INSERT INTO Homegoods VALUES (3, "pillows", 10,200,40);
@@ -14,4 +17,9 @@ INSERT INTO Homegoods VALUES(12,"towels", 15,190,90);
 INSERT INTO Homegoods VALUES (13, "bath_mat",7,140,60);
 INSERT INTO Homegoods VALUES (14,"trash_bin", 2,20,10);
 INSERT INTO Homegoods VALUES (15,"soap_dispenser", 6,30,15);
+
+--Organize database by total revenue of each product
+SELECT * from Homegoods ORDER by total_revenue
+
+--Organize database by products that have a gross profit of more that $100 and sold more or equal to 5 of said product.
 SELECT item, total_items_sold, gross_profit FROM Homegoods WHERE total_items_sold >=5 GROUP BY item HAVING (gross_profit) >=100;
