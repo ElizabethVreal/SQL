@@ -1,0 +1,17 @@
+CREATE TABLE Homegoods (id INTEGER PRIMARY KEY, item TEXT, total_items_sold INTEGER, total_revenue INTEGER, gross_profit INTEGER);
+INSERT INTO Homegoods VALUES (1, "bed_sheets",7, 420,120);
+INSERT INTO Homegoods VALUES ( 2, "bed_skirt",5,100,300);
+INSERT INTO Homegoods VALUES (3, "pillows", 10,200,40);
+INSERT INTO Homegoods VALUES (4,"night_stand",2,180,30);
+INSERT INTO Homegoods VALUES (5, "bed_frame", 3,720,60);
+INSERT INTO Homegoods VALUES (6, "pots_pans", 9,810,200);
+INSERT INTO Homegoods VALUES (7,"mixer",1,100,10);
+INSERT INTO Homegoods VALUES (8,"coffee_maker",3, 120,20);
+INSERT INTO Homegoods VALUES (9, "knives", 6,480, 80);
+INSERT INTO Homegoods VALUES (10, "dishes", 4, 500,60);
+INSERT INTO Homegoods VALUES (11, "shower_curtain",5,125,40);
+INSERT INTO Homegoods VALUES(12,"towels", 15,190,90);
+INSERT INTO Homegoods VALUES (13, "bath_mat",7,140,60);
+INSERT INTO Homegoods VALUES (14,"trash_bin", 2,20,10);
+INSERT INTO Homegoods VALUES (15,"soap_dispenser", 6,30,15);
+SELECT item, total_items_sold, gross_profit FROM Homegoods WHERE total_items_sold >=5 GROUP BY item HAVING (gross_profit) >=100;
